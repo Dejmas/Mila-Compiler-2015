@@ -54,13 +54,12 @@
 #include "print-tree.h"
 #include "tree-cfg.h"
 
-#include "sfe-lang.h"
 #include "sfe1.h"
 
 
 /*-----------------------------------------------------------------*/
 //#include "/home/tom/mySchool/PJP/pascal/synan.h"
-#include "synan.h"
+#include "syntacticanalyzer.h"
 /*-----------------------------------------------------------------*/
 struct GTY(()) lang_identifier {
   struct tree_identifier common;
@@ -191,34 +190,12 @@ void sfe_parse_input_files(const char** filenames, unsigned filename_count) {
     FILE * in = fopen( filenames[i], "r" );
     if ( in )
     {
-      SynAnal sa( in, stdout );
+      SyntacticAnalyzer sa( in, stdout );
       sa.parseFile();
       sfe_global_decls_vec = sa.fileVec;
     }
     fclose( in );
   }
-  /*/
-  //n char * data = (char*)malloc( 20*sizeof(char) );
-  if(flag_aaa) printf("Flag aaa is on\n");
-  else printf("Flag aaa is off\n");
-  
-  tree global_i = build_global_variable_i();
-  register_global_variable_declaration(global_i);
-  
-  tree declaration_block_sample = declaration_block_sample_function();
-  register_global_function_declaration(declaration_block_sample);
-
-  tree dummy_function_decl = build_dummy_function(global_i);
-  register_global_function_declaration(dummy_function_decl);
-  
-  tree factorial_function_decl = build_factorial_function();
-  register_global_function_declaration(factorial_function_decl);
-  
-  tree main = build_main(global_i, dummy_function_decl, factorial_function_decl);
-  register_global_function_declaration(main);
-  //tree m = build_main1();
-  //register_global_function_declaration(m);
-  //*/
 }
 
 /* parsing language hook */
