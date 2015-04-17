@@ -1,6 +1,6 @@
 #ifndef SYNTACTICANALYZER_H
 #define SYNTACTICANALYZER_H
-#include "generic.h"
+#include "../generic/generic.h"
 #include <map>
 #include <string>
 #include <vector>

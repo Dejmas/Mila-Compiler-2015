@@ -1,13 +1,13 @@
-Program kolecka;
+Program circle;
 
 var 
 	Y, X, n, sx, sy : integer;
 begin
-	writeln( 'zadejte radius' );
+	writeln( 'enter radius' );
 	readln( n );
-	writeln( 'zadejte x-sovou souradnici stredu.' );
+	writeln( 'enter x coordinate of center.' );
 	readln( sx );
-	writeln( 'zadejte y-sovou souradnici stredu.' );
+	writeln( 'enter y coordinate of center.' );
 	readln( sy );
 
 	for Y := 0 to 30 do

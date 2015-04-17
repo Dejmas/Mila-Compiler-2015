@@ -58,8 +58,8 @@
 
 
 /*-----------------------------------------------------------------*/
-//#include "/home/tom/mySchool/PJP/pascal/synan.h"
-#include "syntacticanalyzer.h"
+//#include "/home/tom/mySchool/PJP/mila-pjp/syntacticanalyzer.h"
+#include "parser/syntacticanalyzer.h"
 /*-----------------------------------------------------------------*/
 struct GTY(()) lang_identifier {
   struct tree_identifier common;

@@ -4,7 +4,7 @@ var
     pole : array [ 2 .. 100 ] of integer;
     i, j, k, b : integer;
 begin
-	writeln( 'Pocitani Eratosthenesova sita...' )
+	writeln( 'Computing the sieve or Eratosthenes...' )
     for i := 2 to 100 do 
     begin
     	pole[ i ] := 1;
@@ -18,7 +18,7 @@ begin
 	    		pole[ j*i ] := 0;  
     	end;
     end;
-    writeln( 'Prvocisla:' );
+    writeln( 'Primes:' );
     for i := 2 to 100 do
     begin
     	if pole[ i ] then
