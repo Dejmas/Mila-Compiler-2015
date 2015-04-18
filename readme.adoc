@@ -1,0 +1,71 @@
+= Mila Compiler 2015
+
+This project is an extension for GCC (GNU Compiler Collection). This extension adds support for a custom programming language called Mila. The Mila programming language is very similar to Pascal, with some features omitted.
+
+This work consists of a lexical analyzer, a syntactic analyzer, and the translation of code into GCC's intermediate representation called Generic. This whole part of the compiler is known as the compiler's frontend.
+
+== Lexical Analyzer
+
+The lexical analyzer is a finite state machine that tokenizes the input source code. In this project, GNU FLEX was used to generate the C program for the lexical analyzer.
+
+== Syntactic Analyzer
+
+The Mila programming language was studied first, and then its formal LL(1) class grammar was created. Subsequently, a Recursive Descent Parser was implemented to parse this grammar.
+
+== Generic
+
+Generic is the abstract syntax tree representation used by GCC. More precisely, Generic is a Directed Acyclic Graph (DAG). A set of functions to create Generic nodes—such as variables, arrays, literals, statements, functions, loops, conditions, and expressions—was implemented. The parser processes Mila code and translates it into Generic.
+
+This project is my university assignment for the course BI-PJP. The course PJP stands for Programming Languages and Compilers at the Faculty of Information Technology, Czech Technical University in Prague.
+
+
+== Maintenance
+
+This is a one-time project and will not be maintained with the latest versions of GCC. It was developed with GCC version 4.8.4 in April 2015.
+
+== License
+
+This software is licensed under GPLv3.
+
+
+== Capabilities
+
+
+==== Input Output
+
+[,pascal]
+----
+include::tests/factorialCycle.p[]
+----
+
+==== Arithmentic Expressions
+
+[,pascal]
+----
+include::tests/expressions.p[]
+----
+
+==== Recursion
+
+[,pascal]
+----
+include::tests/gcd.p[]
+----
+
+==== Indirect Recursion
+
+[,pascal]
+----
+include::tests/indirectrecursion.p[]
+----
+
+==== Arrays
+
+Note the control about starting and ending index of the array.
+
+[,pascal]
+----
+include::examples/mysample.p[]
+----
+
+
